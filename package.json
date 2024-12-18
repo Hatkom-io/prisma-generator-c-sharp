@@ -1,0 +1,48 @@
+{
+  "name": "@hatkom/prisma-generator-c-sharp",
+  "author": "Vladyslav Zavalykhatko",
+  "description": "Generate C# records based on Prisma schema",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "version": "1.0.0",
+  "license": "MIT",
+  "bin": {
+    "prisma-generator-c-sharp": "./dist/bin.js"
+  },
+  "engines": {
+    "node": ">=22.0"
+  },
+  "scripts": {
+    "start": "node dist/bin.js",
+    "dev": "npx tsc -w",
+    "build": "npx tsc",
+    "prepack": "pnpm build",
+    "bump": "npx npm-check-updates -u --deep && pnpm i && pnpm upgrade"
+  },
+  "dependencies": {
+    "@prisma/generator-helper": "^6.1.0",
+    "@prisma/internals": "^6.1.0"
+  },
+  "peerDependencies": {
+    "@prisma/client": "^5.5.2"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@types/node": "^22.10.2",
+    "prisma": "^6.1.0",
+    "typescript": "^5.7.2"
+  },
+  "homepage": "https://github.com/Hatko/prisma-generator-flavoured-ids",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Hatko/prisma-generator-flavoured-ids"
+  },
+  "keywords": [
+    "prisma",
+    "prisma2",
+    "generator"
+  ],
+  "trustedDependencies": [
+    "@biomejs/biome"
+  ]
+}
