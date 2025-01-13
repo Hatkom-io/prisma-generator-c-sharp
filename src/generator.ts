@@ -50,14 +50,20 @@ namespace HH.Services.Models
 
     options.dmmf.datamodel.models.forEach(async (model) => {
       content += `\n  public record ${model.name}(`
-      model.fields.forEach((field, idx) => {
-        const isLast = idx === model.fields.length - 1
+      model.fields.forEach((field) => {
+        if (field.isId || field.isUpdatedAt || field.name === 'createdAt') {
+          return
+        }
+
         const singleType =
           field.kind === 'scalar' ? cSharpTypeMap[field.type] : field.type
         const type = field.isList ? convertToList(singleType) : singleType
 
-        content += `\n    ${type}${field.isRequired ? '' : '?'} ${field.name}${isLast ? '' : ','}`
+        content += `\n    ${type}${field.isRequired ? '' : '?'} ${field.name},`
       })
+      // We can't blindly put a comma at the end of the record fields definitions, except the last one, because we skip `isId`, `isUpdatedAt` and `createdAt` fields
+      content = content.slice(0, -1)
+
       content += '\n  );'
     })
 
