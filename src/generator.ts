@@ -11,6 +11,7 @@ const cSharpTypeMap: Record<string, string> = {
   Float: 'float',
   DateTime: 'DateTime',
   Boolean: 'bool',
+  Json: 'object',
 }
 
 const convertToList = (type: string) => `List<${type}>`
