@@ -20,17 +20,17 @@
     "bump": "bunx npm-check-updates -u --deep -p bun -x @react-email/render && bun i && bun update"
   },
   "dependencies": {
-    "@prisma/generator-helper": "6.5.0",
-    "@prisma/internals": "6.5.0"
+    "@prisma/generator-helper": "^6.5.0",
+    "@prisma/internals": "^6.5.0"
   },
   "peerDependencies": {
-    "@prisma/client": "5.22.0"
+    "@prisma/client": "^5.22.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
-    "@types/node": "22.13.10",
-    "prisma": "6.5.0",
-    "typescript": "5.8.2"
+    "@biomejs/biome": "^1.9.4",
+    "@types/node": "^22.13.10",
+    "prisma": "^6.5.0",
+    "typescript": "^5.8.2"
   },
   "homepage": "https://github.com/Hatkom-io/prisma-generator-c-sharp",
   "repository": {
